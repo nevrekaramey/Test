@@ -1,0 +1,4 @@
+<apex:page standardcontroller="Auction__c" extensions="AuctionOperation" action="{!viewRedirect}">
+<apex:pageMessages />
+
+</apex:page>

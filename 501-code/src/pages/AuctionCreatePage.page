@@ -1,0 +1,27 @@
+<apex:page standardController="Auction__c" extensions="AuctionOperation" showHeader="false" tabStyle="Auction__c">
+<apex:sectionHeader title="Auction" subtitle="{!Auction__c.Name}"/>
+    <apex:form >
+    <apex:pageMessages />
+        <apex:pageBlock title="Auction details">
+            <apex:pageBlockSection title="Auction details" columns="2">
+                <apex:inputField value="{!Auction__c.Name}" required="true"/>
+                <apex:inputField value="{!Auction__c.Auction_Status__c}"/>
+                <apex:inputField value="{!Auction__c.Declared_Value__c}"/>
+                <apex:inputField value="{!Auction__c.High_Bidder__c}"/>
+                <apex:inputField value="{!Auction__c.Reserve_Amount__c}"/>
+                <apex:inputField value="{!Auction__c.Bid_Amount__c}"/>
+                <!-- <apex:inputField value="{!Auction__c.Registered_Charity__c}"/> This is mandatory field while saving creating auction for sys admin--> 
+                <apex:inputField value="{!Auction__c.Description__c}" required="true"/>
+                <apex:inputField value="{!Auction__c.Registered_Charity__c}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!save}" value="Save"/> 
+                <apex:commandButton action="{!cancelAuction}" value="Cancel"/>
+                <apex:commandButton action="{!startAuction}" value="Start Auction"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    **NOTE: [Registered Charity is a mandatory field while saving creating auction. As per UI requirements this is not required but auction 
+    cannot be created without this hence including this.] ** 
+</apex:page>

@@ -1,0 +1,27 @@
+<apex:page standardController="Auction__c" extensions="AuctionOperation" showHeader="false" tabStyle="Auction__c">
+<apex:sectionHeader title="Auction" subtitle="{!Auction__c.Name}"/>
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock title="Auction details">
+            <apex:pageBlockSection collapsible="false">
+                
+                <apex:outputField value="{!Auction__c.Name}"/>
+                <apex:outputField value="{!Auction__c.Auction_Status__c}"/>
+                <apex:outputField value="{!Auction__c.Declared_Value__c}"/>
+                <apex:outputField value="{!Auction__c.High_Bidder__c}"/>
+                <apex:outputField value="{!Auction__c.Reserve_Amount__c}"/>
+                <apex:outputField value="{!Auction__c.Bid_Amount__c}"/>
+                <apex:outputField value="{!Auction__c.Description__c}"/>
+                
+                <apex:inputField value="{!Auction__c.Bid_Amount__c}" required="true" rendered="{!BidAmountVisibility}"/>
+                <apex:commandButton value="Place or Update Bid" action="{!placeOrUpdateBid}" rendered="{!AuctionStatus}"/>
+                
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons location="bottom" > 
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

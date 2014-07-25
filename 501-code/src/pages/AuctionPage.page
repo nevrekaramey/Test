@@ -1,0 +1,7 @@
+<apex:page standardController="Auction__c">
+   <apex:detail relatedList="true" title="true"/> 
+   
+   <!--
+   rendered="{!$Profile.Name == 'System Administrator'}"
+   -->
+</apex:page>
